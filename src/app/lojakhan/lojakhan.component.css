@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.header {
+    background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    filter: drop-shadow(0 0 0.75rem rgba(165, 5, 174, 0.974));
+}
+
+.navbar {
+    background-color: #182848;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #4b6cb7;
+}
+
+.student-ra-form {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.student-ra-form input[type="number"] {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    width: 150px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.student-ra-form input[type="number"]::placeholder {
+    color: #999;
+}
+
+.student-ra-form button {
+    padding: 0.5rem 1rem;
+    background-color: #4b6cb7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.student-ra-form button:hover {
+    background-color: #2e469b;
+}
+
+.hero {
+    background: url('/assets/hero.jpg') center/cover;
+    background-attachment: fixed;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.floating-icons-left,
+.floating-icons-right {
+    position: relative;
+    width: 200px;
+    filter: drop-shadow(0 0 0.75rem rgb(204, 0, 208));
+}
+
+.moving-image {
+    top: -120px;
+    width: 100px;
+    position: absolute;
+    animation: float 3s ease-in-out infinite;
+}
+
+.offset-left {
+    top: 40px;
+    left: -30px;
+    animation-delay: 0.5s;
+}
+
+.offset-right {
+    top: 60px;
+    right: -30px;
+    animation-delay: 1s;
+}
+
+.how,
+.rewards {
+    text-align: center;
+    color: #716f6f;
+    gap: 10px;
+    padding: 2rem;
+}
+
+.how h1,
+.rewards h1 {
+    font-size: 32px;
+}
+
+.rewards h1 {
+    margin: 3vh;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.col-1 .moving-image {
+    margin: 3vh 0;
+    top: auto;
+    width: 200px;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 0.9rem rgb(0, 174, 249));
+}
+
+.col-2 {
+    margin: 3vh 0;
+}
+
+.steps {
+    text-align: left;
+    margin-left: 10px;
+    font-weight: 500;
+    max-width: 70%;
+}
+
+.step {
+    text-align: left;
+}
+
+.step:nth-child(2) {
+    text-align: center;
+}
+
+.step:nth-child(3) {
+    text-align: right;
+}
+
+.step-number {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #007BFF;
+}
+
+.rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.reward-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.reward-card:hover {
+    transform: translateY(-5px);
+}
+
+.points {
+    color: #4b6cb7;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.claim-btn {
+    background-color: #4b6cb7;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.claim-btn:hover {
+    background-color: #182848;
+}
+
+.active {
+    font-weight: bold;
+    background-color: #4b6cb7;
+}
+
+.student-saldo {
+    background-color: #182848;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.move-image {
+    animation: float 3s ease-in-out infinite;
+
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 5vh;
+    }
+
+    .navbar {
+        height: 120px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 0.5rem;
+    }
+
+    .nav-links {
+        position: static;
+        transform: none;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .student-ra-form {
+        margin: 0;
+        width: 100%;
+        justify-content: center;
+        position: absolute;
+        bottom: 0.5rem;
+    }
+
+    .student-ra-form input[type="number"] {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .student-saldo {
+        position: static;
+        margin: 1rem auto;
+        width: 90%;
+    }
+
+    .floating-icons-left,
+    .floating-icons-right {
+        width: 100%;
+        height: 100px;
+        position: relative;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        top: 5vh;
+    }
+
+    .moving-image {
+        width: 70px;
+    }
+
+    .offset-left {
+        top: 10vh;
+        left: 30%;
+    }
+
+    .offset-right {
+        top: 12vh;
+        right: 30%;
+    }
+
+    .columns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .col-1 .moving-image {
+        width: 150px;
+        margin: 1vh auto;
+        position: relative;
+    }
+
+    .col-2 {
+        margin: 0;
+        width: 100%;
+    }
+
+    .steps {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .step {
+        margin: 3vh 0;
+        text-align: left;
+    }
+
+    .step:nth-child(2) {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .step:nth-child(3) {
+        text-align: right;
+    }
+
+    .how {
+        padding-bottom: 0;
+    }
+
+    .rewards {
+        padding-top: 0;
+    }
+
+    .rewards h1 {
+        padding-top: 0;
+    }
+}

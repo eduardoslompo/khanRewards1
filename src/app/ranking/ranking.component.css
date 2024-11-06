@@ -1,0 +1,64 @@
+mat-card-header {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+mat-card-title {
+  margin: 0 0 10px 0;
+  text-align: center !important;
+  width: 100%;
+}
+
+td, th {
+  text-align: center;
+}
+
+.ranking-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ranking-card {
+  margin-bottom: 20px;
+}
+
+.ranking-table {
+  width: 100%;
+}
+
+.position-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.position-number {
+  font-weight: bold;
+}
+
+.medal {
+  font-size: 1.2em;
+}
+
+.first-place {
+  background-color: rgba(255, 215, 0, 0.1);
+  font-weight: bold;
+}
+
+.second-place {
+  background-color: rgba(192, 192, 192, 0.1);
+  font-weight: bold;
+}
+
+.third-place {
+  background-color: rgba(205, 127, 50, 0.1);
+  font-weight: bold;
+}
+
+tr.mat-mdc-row:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}

@@ -1,0 +1,26 @@
+<div class="header">
+  <h1>🎓 Loja Khan</h1>
+</div>
+
+<nav class="navbar">
+  <div class="nav-links">
+    <a routerLink="/lojakhan" class="nav-link" routerLinkActive="active">Recompensas</a>
+    <a routerLink="/ranking" class="nav-link" routerLinkActive="active">Ranking</a>
+  </div>
+  <div class="student-ra-form">
+    <input type="number" [(ngModel)]="ra" [value]="ra === 0 ? null : ra" placeholder="Digite seu RA"
+           (ngModelChange)="buscarPontos()" />
+  </div>
+</nav>
+
+<div class="student-saldo" *ngIf="pontos !== null || ra">
+  <ng-container *ngIf="pontos !== null; else raNaoEncontrado">
+    <p>Olá {{ nome }}!</p>
+    <p>Seus pontos: {{ pontos }}</p>
+  </ng-container>
+  <ng-template #raNaoEncontrado>
+    <p>RA não encontrado!</p>
+  </ng-template>
+</div>
+
+<router-outlet></router-outlet>

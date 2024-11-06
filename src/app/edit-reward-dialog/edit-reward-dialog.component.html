@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>{{ data.id ? 'Editar' : 'Adicionar' }} Aluno</h1>
+    <div mat-dialog-content>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="data.nome" placeholder="Nome do estudante">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>RA</mat-label>
+        <input matInput type="number" [(ngModel)]="data.ra" placeholder="RA do estudante">
+      </mat-form-field>
+      
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Estrelas Atuais</mat-label>
+        <input matInput type="number" [(ngModel)]="data.estrelasAtuais">
+      </mat-form-field>
+      
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Estrelas Anteriores</mat-label>
+        <input matInput type="number" [(ngModel)]="data.estrelasAnteriores">
+      </mat-form-field>
+      
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Prêmios Coletados</mat-label>
+        <input matInput [(ngModel)]="premiosString" placeholder="Separar prêmios por vírgula">
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions align="end">
+      <button *ngIf="data.id" mat-button color="warn" (click)="onDelete()">Excluir</button>
+
+      <button mat-button (click)="onNoClick()">Cancelar</button>
+      <button mat-button color="primary" (click)="onSave()">
+        {{ data.id ? 'Salvar' : 'Adicionar' }}
+      </button>
+    </div>

@@ -1,0 +1,43 @@
+<div class="ranking-container" [@slideDown]>
+  <mat-card class="ranking-card">
+    <mat-card-header>
+      <mat-card-title>Ranking dos Alunos</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <table mat-table [dataSource]="dataSource" class="ranking-table">
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> Posição </th>
+          <td mat-cell *matCellDef="let element; let i = index"
+            [ngClass]="{'first-place': i === 0, 'second-place': i === 1, 'third-place': i === 2}">
+            <div class="position-cell">
+              <span class="position-number">{{i + 1}}</span>
+              <span *ngIf="i < 3" class="medal">
+                {{i === 0 ? '🥇' : i === 1 ? '🥈' : '🥉'}}
+              </span>
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nome">
+          <th mat-header-cell *matHeaderCellDef> Nome </th>
+          <td mat-cell *matCellDef="let element; let i = index"
+            [ngClass]="{'first-place': i === 0, 'second-place': i === 1, 'third-place': i === 2}">
+            {{element.nome}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="premios">
+          <th mat-header-cell *matHeaderCellDef> Prêmios </th>
+          <td mat-cell *matCellDef="let element; let i = index"
+            [ngClass]="{'first-place': i === 0, 'second-place': i === 1, 'third-place': i === 2}">
+            {{element.premiosColetados.length}}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</div>

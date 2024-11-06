@@ -9,7 +9,6 @@ export class AuthService {
   login(username: string, password: string): boolean {
     if (username === 'admin' && password === '123') {
       this.isAuthenticated = true;
-      localStorage.setItem('isLoggedIn', 'true');
       return true;
     }
     return false;
@@ -17,10 +16,9 @@ export class AuthService {
 
   logout(): void {
     this.isAuthenticated = false;
-    localStorage.removeItem('isLoggedIn');
   }
 
   isLoggedIn(): boolean {
-    return this.isAuthenticated || localStorage.getItem('isLoggedIn') === 'true';
+    return this.isAuthenticated;
   }
 }

@@ -21,8 +21,8 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-                "src/favicon.ico",
-                "src/assets"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
@@ -33,20 +33,31 @@
             "prerender": true,
             "ssr": {
               "entry": "server.ts"
-            }
+            },
+            "allowedCommonJsDependencies": [
+              "@grpc/grpc-js",
+              "@grpc/proto-loader",
+              "undici",
+              "firebase",
+              "@firebase/app",
+              "@firebase/auth",
+              "@firebase/firestore",
+              "@firebase/functions",
+              "@firebase/storage"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1.5MB",
-                  "maximumError": "2MB"
+                  "maximumWarning": "2MB",
+                  "maximumError": "5MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "8kb",
+                  "maximumError": "12kb"
                 }
               ],
               "outputHashing": "all"

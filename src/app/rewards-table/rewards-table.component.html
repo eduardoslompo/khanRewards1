@@ -11,19 +11,9 @@
       <td mat-cell *matCellDef="let reward">{{reward.ra}}</td>
     </ng-container>
 
-    <ng-container matColumnDef="estrelasAtuais">
-      <th mat-header-cell *matHeaderCellDef>Estrelas Atuais</th>
-      <td mat-cell *matCellDef="let reward">{{reward.estrelasAtuais}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="estrelasAnteriores">
-      <th mat-header-cell *matHeaderCellDef>Estrelas Anteriores</th>
-      <td mat-cell *matCellDef="let reward">{{reward.estrelasAnteriores}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="saldoEstrelas">
-      <th mat-header-cell *matHeaderCellDef>Saldo de Estrelas</th>
-      <td mat-cell *matCellDef="let reward">{{getSaldoEstrelas(reward)}}</td>
+    <ng-container matColumnDef="porcentagem">
+      <th mat-header-cell *matHeaderCellDef>Porcentagem</th>
+      <td mat-cell *matCellDef="let reward">{{reward.porcentagem / 100 | percent:'1.0-0'}}</td>
     </ng-container>
 
     <ng-container matColumnDef="premiosColetados">

@@ -8,9 +8,8 @@ export interface Reward {
   id?: string;
   nome: string;
   ra: number;
-  estrelasAtuais: number;
-  estrelasAnteriores: number;
   premiosColetados: string[];
+  porcentagem: number;
 }
 
 @Injectable({

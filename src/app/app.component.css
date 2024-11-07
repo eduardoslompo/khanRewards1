@@ -18,8 +18,19 @@ body {
 
 .header h1 {
     margin: 0;
-    filter: drop-shadow(0 0 0.75rem rgba(165, 5, 174, 0.974));
+    font-family: 'Shrikhand', sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+    color: #f8ce11;
+    text-align: center;
+        text-shadow: 
+        -2px -2px 0 #000000,
+         2px -2px 0 #180b69,
+        -2px  2px 0 #180b69,
+         2px  2px 0 #332686;
+        filter: none;
 }
+
 
 .navbar {
     background-color: #182848;

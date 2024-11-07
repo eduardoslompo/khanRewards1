@@ -13,10 +13,10 @@
   </div>
 </nav>
 
-<div class="student-saldo" *ngIf="pontos !== null || ra">
-  <ng-container *ngIf="pontos !== null; else raNaoEncontrado">
+<div class="student-saldo" *ngIf="porcentagem !== null || ra">
+  <ng-container *ngIf="porcentagem !== null; else raNaoEncontrado">
     <p>Olá {{ nome }}!</p>
-    <p>Seus pontos: {{ pontos }}</p>
+    <p>Seus pontos: {{ porcentagem }}</p>
   </ng-container>
   <ng-template #raNaoEncontrado>
     <p>RA não encontrado!</p>

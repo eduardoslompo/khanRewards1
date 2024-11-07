@@ -16,7 +16,7 @@ import { RankingComponent } from './ranking/ranking.component';
 
 export class AppComponent {
   ra!: number;
-  pontos: number | null = null;
+  porcentagem: number | null = null;
   nome!: string;
 
   constructor(private rewardsService: RewardsService){}
@@ -24,10 +24,10 @@ export class AppComponent {
     buscarPontos() {
       this.rewardsService.getStudentSaldo(this.ra).subscribe((reward: Reward | null) => {
         if (reward) {
-          this.pontos = reward.estrelasAtuais - reward.estrelasAnteriores;
+          this.porcentagem = reward.porcentagem;
           this.nome = reward.nome;
         } else {
-          this.pontos = null;
+          this.porcentagem = null;
         }
       });
     }

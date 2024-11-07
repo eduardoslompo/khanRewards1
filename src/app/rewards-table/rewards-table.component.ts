@@ -17,7 +17,7 @@ import { EditRewardDialogComponent } from '../edit-reward-dialog/edit-reward-dia
 })
 export class RewardsTableComponent implements OnInit {
   rewards: Reward[] = [];
-  displayedColumns: string[] = ['nome', 'ra', 'estrelasAtuais', 'estrelasAnteriores', 'saldoEstrelas', 'premiosColetados', 'acoes'];
+  displayedColumns: string[] = ['nome', 'ra', 'porcentagem', 'premiosColetados', 'acoes'];
 
   constructor(private rewardsService: RewardsService, private dialog: MatDialog) {}
 
@@ -56,9 +56,8 @@ export class RewardsTableComponent implements OnInit {
       data: {
         nome: '',
         ra: 0,
-        estrelasAtuais: 0,
-        estrelasAnteriores: 0,
-        premiosColetados: []
+        premiosColetados: [],
+        porcentagem: 0,
       }
     });
 
@@ -69,9 +68,5 @@ export class RewardsTableComponent implements OnInit {
         });
       }
     });
-  }
-
-  getSaldoEstrelas(reward: Reward): number {
-    return reward.estrelasAtuais - reward.estrelasAnteriores;
   }
 }
